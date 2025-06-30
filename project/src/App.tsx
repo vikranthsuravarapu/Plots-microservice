@@ -278,9 +278,15 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="bg-indigo-600 p-2 rounded-lg">
+              <a
+                href="https://c-square.co.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-indigo-600 p-2 rounded-lg hover:bg-indigo-700 transition-colors"
+                title="Go to c-square.co.in"
+              >
                 <Home className="h-6 w-6 text-white" />
-              </div>
+              </a>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Plot Management</h1>
                 <p className="text-gray-600">Manage available plots in your venture</p>
@@ -445,7 +451,6 @@ function App() {
                     <span className="text-sm">{plot.size}</span>
                   </div>
                   <div className="flex items-center text-gray-900">
-                    <DollarSign className="h-4 w-4 mr-2" />
                     <span className="text-lg font-semibold">₹{plot.price.toLocaleString('en-IN')}</span>
                   </div>
                 </div>

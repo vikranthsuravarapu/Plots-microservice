@@ -144,16 +144,12 @@ export class DatabaseService {
     const params = [];
     let paramCount = 0;
 
-    if (filters.status) {
-      paramCount++;
-      query += ` AND status = $${paramCount}`;
-      params.push(filters.status);
-    } else {
-      // Default to available plots if no status specified
-      paramCount++;
-      query += ` AND status = $${paramCount}`;
-      params.push('available');
-    }
+    if (filters.status && filters.status !== 'all') {
+  paramCount++;
+  query += ` AND status = $${paramCount}`;
+  params.push(filters.status);
+}
+// If status is 'all' or not provided, skip filtering by status
 
     if (filters.location) {
       paramCount++;

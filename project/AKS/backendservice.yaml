@@ -2,10 +2,17 @@ apiVersion: v1
 kind: Service
 metadata:
   name: plots-backend-service
+  labels:
+    app: backend
+  # Optional: add annotations if needed
+  # annotations:
+  #   example.com/annotation-key: "annotation-value"
 spec:
   selector:
     app: backend
   ports:
-    - protocol: TCP
+    - name: http
+      protocol: TCP
       port: 3000
       targetPort: 3000
+  type: ClusterIP
